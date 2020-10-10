@@ -10,6 +10,7 @@ jobs:
       - node/install-packages:
           pkg-manager: yarn
           include-branch-in-cache-key: false
+          override-ci-command: 'yarn install'
 workflows:
   node-tests:
     jobs:
