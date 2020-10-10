@@ -8,6 +8,7 @@ jobs:
     steps:
       - checkout
       - run: sudo rm -rf node_modules
+      - node/install-yarn
       - node/install-packages:
           pkg-manager: yarn
           include-branch-in-cache-key: false
