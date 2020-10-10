@@ -1,17 +1,16 @@
 version: 2.1
 orbs:
-  node: circleci/node@3.0.1
+  node: circleci/node@4.1.0
 jobs:
   test-react:
     docker:
       - image: circleci/ruby:2.7.1-node-browsers
     steps:
       - checkout
-      - node/install-yarn
       - node/install-packages:
           pkg-manager: yarn
           include-branch-in-cache-key: false
-          override-ci-command: 'yarn install'
+          override-ci-command: 'yarn add no-lockfile false'
 workflows:
   node-tests:
     jobs:
