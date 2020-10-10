@@ -7,7 +7,7 @@ jobs:
       - image: circleci/ruby:2.7.1-node-browsers
     steps:
       - checkout
-      - run: sudo yarn generate-lock-entry
+      - run:  yarn install
       - node/install-packages:
           pkg-manager: yarn
           include-branch-in-cache-key: false
