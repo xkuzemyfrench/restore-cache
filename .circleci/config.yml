@@ -3,13 +3,13 @@ orbs:
   node: circleci/node@3.0.1
 jobs:
   test-react:
-    executor:
-      name: node/default
-      tag: '12.16'
+    docker:
+      - image: circleci/ruby:2.7.1-node-browsers
     steps:
       - checkout
       - node/install-packages:
           pkg-manager: yarn
+          include-branch-in-cache-key: false
 workflows:
   node-tests:
     jobs:
