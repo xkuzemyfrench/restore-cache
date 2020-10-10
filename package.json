@@ -1,3 +1,5 @@
+{    "installConfig": {     "pnp": true   }}
+
 {
   "name": "example-yarn-package",
   "version": "1.0.0",
