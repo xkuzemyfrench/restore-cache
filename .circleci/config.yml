@@ -5,12 +5,15 @@ jobs:
   test-react:
     docker:
       - image: circleci/ruby:2.7.1-node-browsers
+    working_directory: /mnt/ramdisk
+    
     steps:
       - checkout
       - run: yarn install
       - node/install-packages:
           pkg-manager: yarn
           include-branch-in-cache-key: false
+          cache-dir: '~/.cache/yarn'
 workflows:
   node-tests:
     jobs:
