@@ -13,7 +13,7 @@ jobs:
       - node/install-packages:
           pkg-manager: yarn
           include-branch-in-cache-key: false
-          cache-dir: '~/.cache/yarn'
+          cache-path: '~/.cache/yarn'
 workflows:
   node-tests:
     jobs:
